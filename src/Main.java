@@ -49,25 +49,21 @@ public class Main {
         return sum;
     }
 
-    private static int minSalary() {
-        int min = 0;
+    private static Employee minSalary() {
+        Employee min = employees[0];
         for (Employee employee : employees) {
-            min = employees[0].getSalary();
-            break;
-        }
-        for (Employee employee : employees) {
-            if (min > employee.getSalary()) {
-                min = employee.getSalary();
+            if (min.getSalary() > employee.getSalary()) {
+                min = employee;
             }
         }
         return min;
     }
 
-    private static int maxSalary() {
-        int max = 0;
+    private static Employee maxSalary() {
+        Employee max = employees[0];
         for (Employee employee : employees) {
-            if (max < employee.getSalary()) {
-                max = employee.getSalary();
+            if (max.getSalary() < employee.getSalary()) {
+                max = employee;
             }
         }
         return max;
